@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ThirdServlet
  */
-@WebServlet("/first")		// URL mapping happens here
+//mapping names shouldn't overlap each other
+@WebServlet("/third")		// URL mapping happens here
 public class ThirdServlet extends HttpServlet {
 
 	/**
