@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <servlet>
+    <servlet-name>aa</servlet-name>
+    <servlet-class>chap05.ex01.FirstServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>bb</servlet-name>
+    <servlet-class>chap05.ex01.AnotherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>aa</servlet-name>
+    <url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>bb</servlet-name>
+    <url-pattern>/bye</url-pattern>
+  </servlet-mapping>
+</web-app>
