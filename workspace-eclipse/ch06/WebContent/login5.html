@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function fn_validate() {
+			var formSignIn = document.formLogin;	// form 태그의 name속성으로 form태그 객체 받아오기
+			var user_id = formSignIn.user_id.value;	// form 태그 안의 input 태그의 name속성에 대한 value를 받아온다
+			var user_pw = formSignIn.user_pw.value;
+			
+			if ((user_id.length == 0 || user_id == "") ||
+					(user_pw.length == 0 || user_pw == "")) {
+				alert("id와 pw는 필수 항목입니다");
+			} else {
+				formSignIn.method="post";	// post방식 설정
+				formSignIn.action="login5";	// login5 서블릿
+				formSignIn.submit();	// JS -> Servlet
+			}
+		}
+	</script>
+	<title>Sign In</title>
+</head>
+<body>
+	<form name="formLogin" method="post" action="login5" encType="UTF-8">
+		Your ID: <input type="text" name="user_id" ><br />
+		Password: <input type="password" name="user_pw"><br />
+		<input type="button" onclick="fn_validate()" value="로그인">
+		<input type="reset" value="재입력">
+		<!-- hidden 태그로 화면에 출력하지 않으면서 값을 서블릿으로 전송 -->
+		<input type="hidden" name="user_addrs" value="서울시 성북구" />
+	</form>
+</body>
+</html>
