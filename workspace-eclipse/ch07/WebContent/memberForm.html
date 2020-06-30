@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Member Addition Page</title>
+	<script type="text/javascript">
+		function fn_sendMember() {
+			var formMember = document.formMember;
+			var id = formMember.id.value;
+			var pw = formMember.pw.value;
+			var name = formMember.name.value;
+			var email = formMember.email.value;
+			if (id.length == 0 || id == "") {
+				alert("id required");
+			} else if (pw.length == 0 || pw == "") {
+				alert("pw required");
+			} else if (name.length == 0 || name == "") {
+				alert("name required");
+			} else if (email.length == 0 || email == "") {
+				alert("email required");
+			} else {
+				// when all ready
+				formMember.method="post";
+				formMember.action="member4";
+				formMember.submit();
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="formMember">
+		<table>
+			<th>회원가입창</th>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>비번</td>
+				<td><input type="text" name="pw"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+		</table>
+		<input type="button" value="가입하기" onclick="fn_sendMember()">
+		<input type="reset" value="초기화">
+		<!-- <hidden>태그를 이용해 서블릿에게 회원등록임을 알린다 -->
+		<input type="hidden" name="command" value="addMember" />
+	</form>
+</body>
+</html>
